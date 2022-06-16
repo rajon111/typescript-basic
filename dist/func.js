@@ -42,3 +42,32 @@ greet.Greetings = "hello hello hello";
 if (greet.Greetings) {
     console.log(greet.greeting);
 }
+class Clock {
+    constructor() {
+        this.currentTime = new Date();
+    }
+    sayTime() {
+        return `current time is ${this.currentTime}`;
+    }
+}
+let obj2 = new Clock();
+console.log(obj2.currentTime);
+//inheritance
+/* super class*/
+class P {
+    constructor(a) {
+        this.x = a;
+    }
+    say() {
+        console.log(`hello p`);
+    }
+}
+class Q extends P {
+    constructor(a, b) {
+        super(a);
+        this.y = b;
+    }
+}
+let p = new P("hello");
+let q = new Q("heelo", "world");
+console.log(q.say());

@@ -66,7 +66,47 @@ if(greet.Greetings){
 }
 
 //interface in class
+interface ClockInterface{
+    currentTime: Date;
+    sayTime():string ;
 
-interface Clock
+}
+class Clock implements ClockInterface{
+    currentTime: Date = new Date();
+    constructor(){
 
+    }
+    sayTime(): string {
+        return `current time is ${this.currentTime}`
+    }
+}
+let obj2 = new Clock()
+console.log(obj2.currentTime);
 
+//inheritance
+/* super class*/
+class P{
+    x!:string;
+    constructor(a:string){
+        this.x = a
+    }
+    say(){
+        console.log(`hello p`);
+        
+    }
+}
+class Q extends P {
+    y!: string
+    constructor(a:string, b:string){
+        super(a)
+        this.y = b
+    }
+    //method overridding
+    // say(){
+    //     console.log(`hello q`);
+        
+    // }
+}
+let p = new P("hello")
+let q = new Q("heelo","world")
+console.log(q.say())
